@@ -1,0 +1,151 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://drh5.hostwhitelabel.com:2222/CMD_FILE_MANAGER?path=/domains/portal.premhost.net/public_html/plugins/dns_checker_new/dns_checker_new_plugin.php&X-DirectAdmin-Session-ID=&noredirect=true
+Subject: 
+Date: Sun, 13 Jul 2025 17:35:25 +0100
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--nmDbzet2VkxkFy3lLuUko7nxj2pyeHbj0jdI17oINE----"
+
+
+------MultipartBoundary--nmDbzet2VkxkFy3lLuUko7nxj2pyeHbj0jdI17oINE----
+Content-Type: text/html
+Content-ID: <frame-6976A518706C6D38EC154DE0C5E32F1B@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: https://drh5.hostwhitelabel.com:2222/CMD_FILE_MANAGER?path=/domains/portal.premhost.net/public_html/plugins/dns_checker_new/dns_checker_new_plugin.php&X-DirectAdmin-Session-ID=&noredirect=true
+
+<!--?php
+use Blesta\Core\Util\Events\Common\EventInterface;
+
+/**
+ * dns checker new plugin handler
+ *
+ * @link https://portal.premhost.net Trax
+ */
+class DnsCheckerNewPlugin extends Plugin
+{
+    public function __construct()
+    {
+        // Load components required by this plugin
+        Loader::loadComponents($this, ['Input', 'Record']);
+
+        Language::loadLang('dns_checker_new_plugin', null, dirname(__FILE__) . DS . 'language' . DS);
+        $this---><html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>loadConfig(dirname(__FILE__) . DS . 'config.json');
+    }
+
+    /**
+     * Performs any necessary bootstraping actions
+     *
+     * @param int $plugin_id The ID of the plugin being installed
+     */
+    public function install($plugin_id)
+    {
+
+////        // Fetch all currently-installed languages for this company, for which email templates should be created for
+////        $languages = $this-&gt;Languages-&gt;getAll(Configure::get('Blesta.company_id'));
+////
+////        // Add all email templates
+////        $emails = Configure::get('DnsCheckerNew.install.emails');
+////        foreach ($emails as $email) {
+////            $group = $this-&gt;EmailGroups-&gt;getByAction($email['action']);
+////            if ($group) {
+////                $group_id = $group-&gt;id;
+////            } else {
+////                $group_id = $this-&gt;EmailGroups-&gt;add([
+////                    'action' =&gt; $email['action'],
+////                    'type' =&gt; $email['type'],
+////                    'plugin_dir' =&gt; $email['plugin_dir'],
+////                    'tags' =&gt; $email['tags']
+////                ]);
+////            }
+////
+////            // Set from hostname to use that which is configured for the company
+////            if (isset(Configure::get('Blesta.company')-&gt;hostname)) {
+////                $email['from'] = str_replace(
+////                    '@mydomain.com',
+////                    '@' . Configure::get('Blesta.company')-&gt;hostname,
+////                    $email['from']
+////                );
+////            }
+////
+////            // Add the email template for each language
+////            foreach ($languages as $language) {
+////                $this-&gt;Emails-&gt;add([
+////                    'email_group_id' =&gt; $group_id,
+////                    'company_id' =&gt; Configure::get('Blesta.company_id'),
+////                    'lang' =&gt; $language-&gt;code,
+////                    'from' =&gt; $email['from'],
+////                    'from_name' =&gt; $email['from_name'],
+////                    'subject' =&gt; $email['subject'],
+////                    'text' =&gt; $email['text'],
+////                    'html' =&gt; $email['html']
+////                ]);
+////            }
+////        }
+    }
+
+    /**
+     * Performs any necessary cleanup actions
+     *
+     * @param int $plugin_id The ID of the plugin being uninstalled
+     * @param bool $last_instance True if $plugin_id is the last instance across
+     *  all companies for this plugin, false otherwise
+     */
+    public function uninstall($plugin_id, $last_instance)
+    {
+        if ($last_instance) {
+            
+        }
+////
+////
+////        Loader::loadModels($this, ['Emails', 'EmailGroups']);
+////        Configure::load('dns_checker_new', dirname(__FILE__) . DS . 'config' . DS);
+////
+////        $emails = Configure::get('DnsCheckerNew.install.emails');
+////        // Remove emails and email groups as necessary
+////        foreach ($emails as $email) {
+////            // Fetch the email template created by this plugin
+////            $group = $this-&gt;EmailGroups-&gt;getByAction($email['action']);
+////
+////            // Delete all emails templates belonging to this plugin's email group and company
+////            if ($group) {
+////                $this-&gt;Emails-&gt;deleteAll($group-&gt;id, Configure::get('Blesta.company_id'));
+////
+////                if ($last_instance) {
+////                    $this-&gt;EmailGroups-&gt;delete($group-&gt;id);
+////                }
+////            }
+////        }
+    }
+
+    /**
+     * Returns all permissions to be configured for this plugin (invoked after install(), upgrade(),
+     *  and uninstall(), overwrites all existing permissions)
+     *
+     * @return array A numerically indexed array containing:
+     *
+     *  - group_alias The alias of the permission group this permission belongs to
+     *  - name The name of this permission
+     *  - alias The ACO alias for this permission (i.e. the Class name to apply to)
+     *  - action The action this ACO may control (i.e. the Method name of the alias to control access for)
+     */
+    public function getPermissions()
+    {
+    }
+
+    /**
+     * Returns all permission groups to be configured for this plugin (invoked after install(), upgrade(),
+     *  and uninstall(), overwrites all existing permission groups)
+     *
+     * @return array A numerically indexed array containing:
+     *
+     *  - name The name of this permission group
+     *  - level The level this permission group resides on (staff or client)
+     *  - alias The ACO alias for this permission group (i.e. the Class name to apply to)
+     */
+    public function getPermissionGroups()
+    {
+    }
+}
+</body></html>
+------MultipartBoundary--nmDbzet2VkxkFy3lLuUko7nxj2pyeHbj0jdI17oINE------
